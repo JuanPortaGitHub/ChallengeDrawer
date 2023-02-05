@@ -16,12 +16,12 @@ const MenuItems = (props: any) => {
     inputRange: [0, 0],
     outputRange: [0, 0],
   });
-  const borderRadius = interpolateNode(progress as Adaptable<number>, {
-    inputRange: [0, 1],
-    outputRange: [30, 30],
+  const borderTopLeftRadius = interpolateNode(progress as Adaptable<number>, {
+    inputRange: [0, 0],
+    outputRange: [0, 40],
   });
   const animatedStyle = {
-    borderRadius,
+    borderTopLeftRadius,
     transform: [{ translateY, translateX }],
   };
   return (
@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
   drawerContainer: {
     backgroundColor: Colors.darkGray,
     padding: 30,
-    flex: 1,
     width: 1000,
   },
   separator: {

@@ -16,9 +16,7 @@ const NavigationDrawer = () => {
         headerShown: false,
         overlayColor: "transparent",
         drawerStyle: {
-          backgroundColor: "white",
-          width: 270,
-          flex: 1,
+          width: 200,
         },
       }}
       drawerContent={(props) => {

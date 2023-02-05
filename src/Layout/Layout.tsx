@@ -19,19 +19,28 @@ export const Layout = ({ children, sectionName, toggleDrawer }: Props) => {
     outputRange: [0, 60],
   });
 
-  const translateX = interpolateNode(progressScreen as Adaptable<number>, {
-    inputRange: [0, 0],
-    outputRange: [0, 0],
+  const rotate = interpolateNode(progressScreen as Adaptable<number>, {
+    inputRange: [0, 1],
+    outputRange: ["0deg", "-10deg"],
   });
 
-  const borderRadius = interpolateNode(progressScreen as Adaptable<number>, {
+  const borderTopLeftRadius = interpolateNode(
+    progressScreen as Adaptable<number>,
+    {
+      inputRange: [0, 0],
+      outputRange: [0, 40],
+    }
+  );
+
+  const marginLeft = interpolateNode(progressScreen as Adaptable<number>, {
     inputRange: [0, 1],
-    outputRange: [0, 30],
+    outputRange: [0, 80],
   });
 
   const animatedStyle = {
-    borderRadius,
-    transform: [{ translateY, translateX }],
+    borderTopLeftRadius,
+    marginLeft,
+    transform: [{ rotate, translateY }],
   };
   return (
     <Animated.View style={[styles.container, animatedStyle]}>
